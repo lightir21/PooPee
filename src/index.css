@@ -1,13 +1,76 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 100%;
+}
+
+.container-center {
+  background-color: azure;
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 60%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.container-pages {
+  margin: 0 auto;
+  width: 60%;
+  padding: 4rem 0;
+  background-color: azure;
+}
+
+.icons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.icons-container,
+h3 {
+  padding-bottom: 0.7rem;
+}
+
+.item {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  border-radius: 10rem;
+  padding: 0.5rem 2.5rem;
+  transform: all 0.2s;
+}
+
+.item:hover {
+  box-shadow: 0 0 0 0.1rem black;
+}
+
+.poo {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.pee {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.feed {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: start;
+}
+
+.text {
+  display: block;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
