@@ -29,7 +29,22 @@ const App = () => {
         <Route path="/" element={<Dashboard />} />
         <Route
           path="feed"
-          element={<Feed amount={amount} setAmount={setAmount} />}
+          element={
+            <Feed
+              amount={amount}
+              setAmount={setAmount}
+              feed={feed}
+              setFeed={setFeed}
+              date={date}
+              setDate={setDate}
+              time={time}
+              setTime={setTime}
+              isActive={isActive}
+              setIsActive={setIsActive}
+              currPage={currPage}
+              setCurrPage={setCurrPage}
+            />
+          }
         />
         <Route
           path="poo"
@@ -50,7 +65,25 @@ const App = () => {
             />
           }
         />
-        <Route path="pee" element={<Pee />} />
+        <Route
+          path="pee"
+          element={
+            <Pee
+              pee={pee}
+              setPee={setPee}
+              date={date}
+              setDate={setDate}
+              time={time}
+              setTime={setTime}
+              description={description}
+              setDescription={setDescription}
+              isActive={isActive}
+              setIsActive={setIsActive}
+              currPage={currPage}
+              setCurrPage={setCurrPage}
+            />
+          }
+        />
       </Routes>
     </>
   );

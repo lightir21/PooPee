@@ -6,22 +6,26 @@
 
 html {
   font-size: 100%;
+  background-color: rgb(220, 228, 228);
 }
 
 .container-center {
-  background-color: azure;
+  background-color: white;
   margin: 0 auto;
   margin-top: 10%;
   width: 60%;
   text-align: center;
   padding-top: 1rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
 }
 
 .container-pages {
   margin: 0 auto;
   width: 60%;
-  padding: 3rem 0;
-  background-color: azure;
+  padding: 1.5rem 0;
+  background-color: white;
+  text-align: center;
 }
 
 .icons-container {
@@ -76,4 +80,53 @@ h3 {
   justify-content: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.underline {
+  border-bottom: 0.7px solid black;
+  width: 60%;
+  margin: 0 auto;
+  color: blue;
+}
+
+.btn--form {
+  background: #00d86c;
+  border-radius: 45%;
+  padding: 0.4rem;
+  border: none;
+  transform: translateY(-4px);
+  transition: 0.3s;
+}
+
+.btn--form:hover {
+  transform: translateY(-6px);
+}
+
+.btn--add {
+  background: #00d86c;
+  border-radius: 45%;
+  padding: 0.4rem;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn--add:hover {
+  transform: translateY(-2px);
+}
+
+.btn--add_empty {
+  background: #00d86c17;
+  border-radius: 45%;
+  padding: 0.4rem;
+  border: none;
+  font-weight: 100;
+}
+
+.title--underline {
+  border-bottom: 0.7px solid black;
+  width: 60px;
+  margin: 0 auto;
+  margin-top: 0.4rem;
+  margin-bottom: 1.4rem;
 }

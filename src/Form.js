@@ -11,6 +11,10 @@ const Form = ({
   setDescription,
   setPoo,
   currPage,
+  setPee,
+  amount,
+  setAmount,
+  feed,
 }) => {
   if (isActive) {
     const handleSubmit = (e) => {
@@ -25,6 +29,32 @@ const Form = ({
           };
           setPoo((poo) => {
             return [...poo, event];
+          });
+        }
+      }
+      if (currPage === "pee") {
+        if (date && time) {
+          const event = {
+            id: new Date().getTime().toString(),
+            date,
+            time,
+            description,
+          };
+          setPee((pee) => {
+            return [...pee, event];
+          });
+        }
+      }
+      if (currPage === "feed") {
+        if (date && time && amount) {
+          const event = {
+            id: new Date().getTime().toString(),
+            date,
+            time,
+            amount,
+          };
+          setAmount((amount) => {
+            return [...amount, event];
           });
         }
       }
@@ -52,20 +82,43 @@ const Form = ({
             onChange={(e) => setTime(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="description">Description (optional): </label>
-          <input
-            type="text"
-            name="description"
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
+        {currPage === "feed" ? (
+          <div>
+            <label htmlFor="amount">Amount: </label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="description">Description (optional): </label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+        )}
+
+        <button className="btn--form" onSubmit={handleSubmit}>
+          Submit
+        </button>
       </form>
     );
+  } else if (currPage === "") {
+    return <button className="btn--add_empty">Add Event</button>;
   } else {
-    return <button onClick={() => setIsActive(true)}>Add Event</button>;
+    return (
+      <button className="btn--add" onClick={() => setIsActive(true)}>
+        Add Event
+      </button>
+    );
   }
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+
 import Form from "./Form";
 
 function Poo({
@@ -16,11 +16,11 @@ function Poo({
   currPage,
   setCurrPage,
 }) {
-  const handleSubmit = () => {};
-
   return (
     <>
       <article className="container-pages">
+        <h2 className="page-title">{currPage}</h2>
+        {currPage && <div className="title--underline"></div>}
         <Form
           isActive={isActive}
           setIsActive={setIsActive}
@@ -36,12 +36,12 @@ function Poo({
         />
       </article>
       {poo.map((item, index) => {
-        const { _, date, time, description } = item;
+        const { id, date, time, description } = item;
         return (
-          <p>
+          <div className="list-item" key={id}>
             {index + 1}: {date} at {time}{" "}
             {description ? `additional info: ${description}` : ""}
-          </p>
+          </div>
         );
       })}
     </>

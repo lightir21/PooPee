@@ -25,6 +25,7 @@ const Navbar = ({ setCurrPage }) => {
           <span className="text">feed</span>
         </Link>
       </div>
+      <div className="underline"></div>
     </div>
   );
 };
