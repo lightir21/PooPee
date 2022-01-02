@@ -7,12 +7,13 @@
 html {
   font-size: 100%;
   background-color: rgb(220, 228, 228);
+  font-family: sans-serif;
 }
 
 .container-center {
   background-color: white;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 3%;
   width: 60%;
   text-align: center;
   padding-top: 1rem;
@@ -129,4 +130,22 @@ h3 {
   margin: 0 auto;
   margin-top: 0.4rem;
   margin-bottom: 1.4rem;
+}
+
+.list-item__container {
+  width: 60%;
+  height: 400px;
+  background-color: white;
+  margin: 0 auto;
+  list-style: none;
+  line-height: 1.5;
+  border: solid 2px rgb(124, 71, 35);
+}
+
+.list-item {
+  padding-left: 3rem;
+}
+
+.list-item__container li:nth-child(odd) {
+  background-color: rgb(236, 236, 236);
 }

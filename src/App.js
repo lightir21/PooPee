@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar setCurrPage={setCurrPage} />
+      <Navbar setCurrPage={setCurrPage} setIsActive={setIsActive} />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route

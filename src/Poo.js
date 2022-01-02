@@ -35,15 +35,19 @@ function Poo({
           description={description}
         />
       </article>
-      {poo.map((item, index) => {
-        const { id, date, time, description } = item;
-        return (
-          <div className="list-item" key={id}>
-            {index + 1}: {date} at {time}{" "}
-            {description ? `additional info: ${description}` : ""}
-          </div>
-        );
-      })}
+      <ul className="list-item__container">
+        {poo
+          .map((item, index) => {
+            const { id, date, time, description } = item;
+            return (
+              <li className="list-item" key={id}>
+                {index + 1}: {date} at {time}{" "}
+                {description ? `additional info: ${description}` : ""}
+              </li>
+            );
+          })
+          .reverse()}
+      </ul>
     </>
   );
 }

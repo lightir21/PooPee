@@ -14,7 +14,8 @@ const Form = ({
   setPee,
   amount,
   setAmount,
-  feed,
+
+  setFeed,
 }) => {
   if (isActive) {
     const handleSubmit = (e) => {
@@ -53,8 +54,8 @@ const Form = ({
             time,
             amount,
           };
-          setAmount((amount) => {
-            return [...amount, event];
+          setFeed((feed) => {
+            return [...feed, event];
           });
         }
       }

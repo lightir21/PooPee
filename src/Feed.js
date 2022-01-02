@@ -34,6 +34,7 @@ const Feed = ({
           amount={amount}
         />
       </article>
+
       {feed.map((item, index) => {
         const { id, date, time, amount } = item;
         return (
