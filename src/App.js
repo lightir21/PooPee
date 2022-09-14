@@ -8,6 +8,13 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 
 const App = () => {
+  localStorage.setItem("poo", []);
+  localStorage.setItem("pee", []);
+  localStorage.setItem("feed", []);
+  const pooFromLocal = localStorage.getItem("poo");
+  const peeFromLocal = localStorage.getItem("pee");
+  const feedFromLocal = localStorage.getItem("feed");
+
   const [poo, setPoo] = useState([]);
   const [pee, setPee] = useState([]);
   const [feed, setFeed] = useState([]);
@@ -19,12 +26,20 @@ const App = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    return setIsActive(false);
+    setIsActive(false);
+    setPoo(pooFromLocal);
+    setPee(peeFromLocal);
+    setFeed(feedFromLocal);
   }, [poo, pee, feed]);
 
   return (
     <>
-      <Navbar setCurrPage={setCurrPage} setIsActive={setIsActive} />
+      <Navbar
+        setCurrPage={setCurrPage}
+        setIsActive={setIsActive}
+        setTime={setTime}
+        setDate={setDate}
+      />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route
