@@ -3,10 +3,16 @@ import { FaPoo, FaBaby, FaCentercode } from "react-icons/fa";
 import { GiBabyBottle } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ setCurrPage, setIsActive }) => {
+const Navbar = ({ setCurrPage, setIsActive, setDate, setTime }) => {
   // const turnPage = (curr){
   //   setIsActive(false)
   // }
+
+  const resetDateNTime = () => {
+    setDate("");
+    setTime("");
+  };
+
   return (
     <div className="container-center">
       <h3>What would you like to track?</h3>
@@ -17,6 +23,7 @@ const Navbar = ({ setCurrPage, setIsActive }) => {
           onClick={() => {
             setIsActive(false);
             setCurrPage("poo");
+            resetDateNTime();
           }}
         >
           <FaPoo />
@@ -28,6 +35,7 @@ const Navbar = ({ setCurrPage, setIsActive }) => {
           onClick={() => {
             setIsActive(false);
             setCurrPage("pee");
+            resetDateNTime();
           }}
         >
           <FaBaby />
@@ -39,6 +47,7 @@ const Navbar = ({ setCurrPage, setIsActive }) => {
           onClick={() => {
             setIsActive(false);
             setCurrPage("feed");
+            resetDateNTime();
           }}
         >
           <GiBabyBottle />

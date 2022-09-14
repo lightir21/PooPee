@@ -32,17 +32,20 @@ const Pee = ({
           time={time}
           setTime={setTime}
           description={description}
+          pee={pee}
         />
       </article>
-      {pee.map((item, index) => {
-        const { id, date, time, description } = item;
-        return (
-          <div className="list-item" key={id}>
-            {index + 1}: {date} at {time}{" "}
-            {description ? `additional info: ${description}` : ""}
-          </div>
-        );
-      })}
+      <ul className="list-item__container">
+        {pee.map((item, index) => {
+          const { id, date, time, description } = item;
+          return (
+            <div className="list-item" key={id}>
+              {index + 1}: {date} at {time}{" "}
+              {description ? `additional info: ${description}` : ""}
+            </div>
+          );
+        })}
+      </ul>
     </>
   );
 };

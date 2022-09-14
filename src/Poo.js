@@ -33,6 +33,7 @@ function Poo({
           time={time}
           setTime={setTime}
           description={description}
+          poo={poo}
         />
       </article>
       <ul className="list-item__container">
@@ -41,7 +42,7 @@ function Poo({
             const { id, date, time, description } = item;
             return (
               <li className="list-item" key={id}>
-                {index + 1}: {date} at {time}{" "}
+                {index + 1}: {date} at {time}
                 {description ? `additional info: ${description}` : ""}
               </li>
             );
