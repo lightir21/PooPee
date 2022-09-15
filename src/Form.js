@@ -22,16 +22,14 @@ const Form = ({
   const resetDateNTime = () => {
     setDate("");
     setTime("");
-    {
-      currPage !== "feed" && setDescription("");
-    }
-    {
-      currPage === "feed" && setAmount("");
-    }
+
+    currPage !== "feed" && setDescription("");
+
+    currPage === "feed" && setAmount("");
   };
 
   if (isActive) {
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
       if (currPage === "poo") {
         if (date && time) {
@@ -41,8 +39,8 @@ const Form = ({
             time,
             description,
           };
-          setPoo((poo) => [...poo, event]);
-          localStorage.setItem(currPage, JSON.stringify([...poo, event]));
+          await setPoo((poo) => [...poo, event]);
+          localStorage.setItem("poo", JSON.stringify([...poo, event]));
         }
       }
       if (currPage === "pee") {
@@ -56,7 +54,7 @@ const Form = ({
           setPee((pee) => {
             return [...pee, event];
           });
-          localStorage.setItem(currPage, JSON.stringify([...pee, event]));
+          localStorage.setItem("pee", JSON.stringify([...pee, event]));
         }
       }
       if (currPage === "feed") {
@@ -70,7 +68,7 @@ const Form = ({
           setFeed((feed) => {
             return [...feed, event];
           });
-          localStorage.setItem(currPage, JSON.stringify([...feed, event]));
+          localStorage.setItem("feed", JSON.stringify([...feed, event]));
         }
       }
       resetDateNTime();

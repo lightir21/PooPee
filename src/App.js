@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Dashboard from "./Dashboard";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Poo from "./Poo";
 import Feed from "./Feed";
 import Pee from "./Pee";
@@ -8,13 +8,6 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 
 const App = () => {
-  localStorage.setItem("poo", []);
-  localStorage.setItem("pee", []);
-  localStorage.setItem("feed", []);
-  const pooFromLocal = localStorage.getItem("poo");
-  const peeFromLocal = localStorage.getItem("pee");
-  const feedFromLocal = localStorage.getItem("feed");
-
   const [poo, setPoo] = useState([]);
   const [pee, setPee] = useState([]);
   const [feed, setFeed] = useState([]);
@@ -25,12 +18,17 @@ const App = () => {
   const [currPage, setCurrPage] = useState("");
   const [isActive, setIsActive] = useState(false);
 
+  const pooFromLocal = localStorage.getItem("poo");
+  const peeFromLocal = localStorage.getItem("pee");
+  const feedFromLocal = localStorage.getItem("feed");
+
   useEffect(() => {
     setIsActive(false);
-    setPoo(pooFromLocal);
-    setPee(peeFromLocal);
-    setFeed(feedFromLocal);
-  }, [poo, pee, feed]);
+
+    if (pooFromLocal) setPoo(JSON.parse(pooFromLocal));
+    if (peeFromLocal) setPee(JSON.parse(peeFromLocal));
+    if (feedFromLocal) setFeed(JSON.parse(feedFromLocal));
+  }, [feedFromLocal, peeFromLocal, pooFromLocal]);
 
   return (
     <>

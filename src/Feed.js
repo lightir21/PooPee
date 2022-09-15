@@ -36,14 +36,15 @@ const Feed = ({
         />
       </article>
       <ul className="list-item__container">
-        {feed.map((item, index) => {
-          const { id, date, time, amount } = item;
-          return (
-            <div className="list-item" key={id}>
-              {index + 1}: {date} at {time} {amount}
-            </div>
-          );
-        })}
+        {feed &&
+          feed.map((item, index) => {
+            const { id, date, time, amount } = item;
+            return (
+              <div className="list-item" key={id}>
+                {index + 1}: {date} at {time} {amount}
+              </div>
+            );
+          })}
       </ul>
     </>
   );
